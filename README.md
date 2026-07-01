@@ -44,6 +44,23 @@ v
 - Node.js v18+
 - MongoDB Atlas account
 - Google Gemini API key
+## 📸 Screenshots
+
+### Login
+![Login](screenshots/login.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Upload Resume
+![Upload](screenshots/upload.png)
+
+### Resume Analysis Result
+![Result](screenshots/result.png)
+
+### Analytics
+![Analytics](screenshots/analytics.png)
+![Analytics2](screenshots/analytics2.png)
 
 ### Installation
 
