@@ -7,7 +7,6 @@ const authRoutes = require('./routes/authRoutes');
 const resumeRoutes = require('./routes/resumeRoutes');
 
 dotenv.config();
-
 connectDB();
 
 const app = express();
