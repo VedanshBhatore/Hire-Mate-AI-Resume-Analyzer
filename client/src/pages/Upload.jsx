@@ -56,14 +56,16 @@ function Upload() {
     <Layout>
       <div className="mx-auto max-w-2xl space-y-6">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Upload Resume</h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <h2 className="bg-gradient-to-r from-indigo-700 via-violet-700 to-fuchsia-700 bg-clip-text text-2xl font-bold text-transparent">
+            Upload Resume
+          </h2>
+          <p className="mt-1 text-sm text-slate-500">
             Upload your PDF resume to get an ATS score and AI feedback
           </p>
         </div>
 
         {error && (
-          <div className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">
+          <div className="rounded-xl border border-rose-100 bg-rose-50 px-4 py-3 text-sm text-rose-600">
             {error}
           </div>
         )}
@@ -73,19 +75,19 @@ function Upload() {
           onDrop={handleDrop}
           onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
           onDragLeave={() => setDragOver(false)}
-          className={`flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-12 transition-colors ${
+          className={`flex flex-col items-center justify-center rounded-3xl border-2 border-dashed p-12 transition-all ${
             dragOver
-              ? 'border-blue-400 bg-blue-50'
+              ? 'scale-[1.01] border-indigo-400 bg-indigo-50 shadow-lg'
               : file
-              ? 'border-green-400 bg-green-50'
-              : 'border-gray-300 bg-white hover:border-blue-300 hover:bg-gray-50'
+              ? 'border-emerald-400 bg-emerald-50'
+              : 'border-slate-300 bg-white/80 backdrop-blur hover:border-indigo-300 hover:bg-indigo-50/40'
           }`}
         >
           <span className="text-5xl">{file ? '✅' : '📄'}</span>
-          <p className="mt-4 text-base font-medium text-gray-700">
+          <p className="mt-4 text-base font-medium text-slate-700">
             {file ? file.name : 'Drag & drop your PDF here'}
           </p>
-          <p className="mt-1 text-sm text-gray-400">
+          <p className="mt-1 text-sm text-slate-400">
             {file ? `${(file.size / 1024 / 1024).toFixed(2)} MB` : 'or click to browse'}
           </p>
           <input
@@ -97,19 +99,19 @@ function Upload() {
           />
           <label
             htmlFor="file-input"
-            className="mt-4 cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="mt-4 cursor-pointer rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-md transition-transform hover:scale-105"
           >
             Browse File
           </label>
         </div>
 
         {/* Job Description */}
-        <div className="rounded-2xl bg-white p-6 shadow-sm">
-          <label className="mb-2 block text-sm font-semibold text-gray-800">
+        <div className="rounded-2xl border border-slate-100 bg-white/80 p-6 shadow-sm backdrop-blur">
+          <label className="mb-2 block text-sm font-semibold text-slate-800">
             Job Description{' '}
-            <span className="font-normal text-gray-400">(optional but recommended)</span>
+            <span className="font-normal text-slate-400">(optional but recommended)</span>
           </label>
-          <p className="mb-3 text-xs text-gray-500">
+          <p className="mb-3 text-xs text-slate-500">
             Paste the job description to get a match score and targeted keyword suggestions
           </p>
           <textarea
@@ -117,7 +119,7 @@ function Upload() {
             onChange={(e) => setJobDescription(e.target.value)}
             rows={6}
             placeholder="Paste the job description here..."
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 resize-none"
+            className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
           />
         </div>
 
@@ -126,7 +128,7 @@ function Upload() {
           <button
             onClick={handleUpload}
             disabled={loading}
-            className="w-full rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
+            className="w-full rounded-xl bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-900/20 transition-transform hover:scale-[1.01] disabled:opacity-60 disabled:hover:scale-100"
           >
             {loading ? 'Analyzing resume...' : 'Upload & Analyze'}
           </button>
