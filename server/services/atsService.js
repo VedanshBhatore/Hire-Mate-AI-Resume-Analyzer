@@ -15,6 +15,9 @@ const calculateATSScore = (text) => {
     projects: ['projects', 'personal projects'],
     contact: ['email', 'phone', 'linkedin', 'github'],
     summary: ['summary', 'objective', 'profile'],
+    certifications: ['certifications', 'certificates', 'licenses','certification','license',
+'certified'
+    ],
   };
 
   Object.entries(sections).forEach(([section, keywords]) => {
